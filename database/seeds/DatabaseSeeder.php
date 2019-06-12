@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
           'description'=>'Jautājums par dzīvi',
           'nosaukums'=>'Šis ir pirmais jautājums',
           'users_id'=>'1',
+          'created_at'=>'2019-06-06 00:00:00',
+          'updated_at'=>'2019-06-06 00:00:00',
         ]);
         DB::table('jautajumi')->insert([
           'anketa_id'=>'1',
