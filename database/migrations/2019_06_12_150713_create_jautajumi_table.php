@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateJautajumiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('users_id')->unique();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('jautajumi', function (Blueprint $table) {
+            $table->bigIncrements('jautajumi_id')->unique();
+            $table->integer('anketa_id')->unsigned();
+            $table->foreign('anketa_id')->references('anketa_id')->on('anketa');
+            $table->string('jautajums', 120);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('jautajumi');
     }
 }
