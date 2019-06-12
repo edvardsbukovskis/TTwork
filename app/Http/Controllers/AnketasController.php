@@ -38,7 +38,11 @@ class AnketasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=Auth::user();
+        $anketa=new Anketa;
+        $anketa->description=$request['description'];
+        $anketa->nosaukums=$request['nosaukums'];
+        $anketa->users_id=$user->id;
     }
 
     /**
