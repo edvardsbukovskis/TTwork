@@ -14,7 +14,10 @@ class CreateAnketaTable extends Migration
     public function up()
     {
         Schema::create('anketa', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('anketa_id')->unique;
+            $table->string('nosaukums',100);
+            $table->string('apraksts',300);
+            $table->foreign('user_id')->references('user_id')->on('user');
             $table->timestamps();
         });
     }

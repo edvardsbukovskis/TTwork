@@ -14,7 +14,10 @@ class CreateAtbildesTable extends Migration
     public function up()
     {
         Schema::create('atbildes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('atbildes_id')->unique;
+            $table->string('atbilde',300);
+            $table->foreign('user_id')->references('user_id')->on('user');
+            $table->foreign('jautajumi_id')->references('jautajumi_id')->on('jautajumi');
             $table->timestamps();
         });
     }
