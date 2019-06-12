@@ -15,6 +15,7 @@ class CreateAtbildesTable extends Migration
     {
         Schema::create('atbildes', function (Blueprint $table) {
             $table->bigIncrements('atbildes_id')->unique();
+            $table->string('atbilde',190);
             $table->integer('jautajumi_id')->unsigned();
             $table->foreign('jautajumi_id')->references('jautajumi_id')->on('jautajumi');
             $table->integer('users_id')->unsigned();
