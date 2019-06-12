@@ -13,6 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+<<<<<<< HEAD:Backup/database/migrations/2014_10_12_000000_create_users_table.php
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
@@ -20,6 +21,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+=======
+        Schema::create('jautajumi', function (Blueprint $table) {
+            $table->bigIncrements('jautajumi_id')->unique;
+            $table->string('jautajums',300);
+            $table->foreign('anketa_id')->references('anketa_id')->on('anketa');
+>>>>>>> 64a91739d606ce4897f64037befb28fb3ff1626b:database/migrations/2019_06_12_130034_create_jautajumi_table.php
             $table->timestamps();
         });
     }
