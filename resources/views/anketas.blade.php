@@ -1,12 +1,12 @@
+<div style="margin: 10px; background-color: darkgray; border: 1px solid black;">
 @foreach ($anketas as $anketa)
 {{ $anketa->id }}
 {{ $anketa->nosaukums}}
 
-@foreach ($anketas as $anketa)
-<div style="margin: 10px; background-color: red; border: 1px solid black;">
-{{ $anketa->jautajumi->first()->jautajums}}
-
+@foreach ($anketa->jautajumi as $jautajums)
+<div style="margin: 10px; background-color: grey; border: 1px solid black;">
+{{ $jautajums->jautajums}}
 </div>
 @endforeach
 @endforeach
-
+</div>
