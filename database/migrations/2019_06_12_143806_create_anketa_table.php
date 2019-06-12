@@ -14,7 +14,7 @@ class CreateAnketaTable extends Migration
     public function up()
     {
         Schema::create('anketas', function (Blueprint $table) {
-            $table->bigIncrements('anketa_id', 1)->unique();
+            $table->bigIncrements('id', 1)->unique();
             $table->string('description', 100);
             $table->string('nosaukums', 100);
             $table->integer('users_id')->unsigned();
@@ -30,6 +30,6 @@ class CreateAnketaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anketa');
+        Schema::dropIfExists('anketas');
     }
 }

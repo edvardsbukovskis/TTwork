@@ -1,3 +1,3 @@
 @foreach ($anketas as $anketa)
-{{ $anketa}}
+{{ $anketa->jautajumi}}
 @endforeach

@@ -14,10 +14,10 @@ class CreateAtbildesTable extends Migration
     public function up()
     {
         Schema::create('atbildes', function (Blueprint $table) {
-            $table->bigIncrements('atbildes_id')->unique();
+            $table->bigIncrements('id')->unique();
             $table->string('atbilde',190);
             $table->integer('jautajumi_id')->unsigned();
-            $table->foreign('jautajumi_id')->references('jautajumi_id')->on('jautajumi');
+            $table->foreign('jautajumi_id')->references('id')->on('jautajumi');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
