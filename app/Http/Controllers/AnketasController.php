@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Anketa;
+use Auth;
 
 class AnketasController extends Controller
 {
@@ -27,7 +28,7 @@ class AnketasController extends Controller
      */
     public function create()
     {
-        //
+        return view ('AnketaCreate');
     }
 
     /**
@@ -38,11 +39,13 @@ class AnketasController extends Controller
      */
     public function store(Request $request)
     {
-        $user=Auth::user();
+        $user=Auth::id();
         $anketa=new Anketa;
         $anketa->description=$request['description'];
         $anketa->nosaukums=$request['nosaukums'];
-        $anketa->users_id=$user->id;
+        $anketa->users_id=$user;
+        $anketa->save();
+        return view ('AnketaCreate');
     }
 
     /**
