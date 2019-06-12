@@ -16,7 +16,7 @@ class CreateJautajumiTable extends Migration
         Schema::create('jautajumi', function (Blueprint $table) {
             $table->bigIncrements('jautajumi_id')->unique();
             $table->integer('anketa_id')->unsigned();
-            $table->foreign('anketa_id')->references('anketa_id')->on('anketa');
+            $table->foreign('anketa_id')->references('anketa_id')->on('anketas');
             $table->string('jautajums', 120);
             $table->timestamps();
         });

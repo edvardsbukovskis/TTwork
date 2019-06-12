@@ -15,7 +15,7 @@ class AnketasController extends Controller
     public function index()
     {
         $anketa=anketa::all();
-        return view('anketa',['anketa'=>$anketa]);
+        return view('anketas',['anketas'=>$anketa]);
     }
 
     /**

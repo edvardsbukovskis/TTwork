@@ -9,7 +9,7 @@ class anketa extends Model
     protected $table='anketas';
 
     public function user(){
-      return $this->belngsTo('App\user');
+      return $this->belongsTo('App\user');
     }
     public function jautajumi(){
       return $this->hasMany('App\jautajumi');

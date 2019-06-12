@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
           'email'=>'krk@gmail.com',
           'password'=>bcrypt('Parole123'),
         ]);
-        DB::table('anketa')->insert([
+        DB::table('anketas')->insert([
           'description'=>'Jautājums par dzīvi',
           'nosaukums'=>'Šis ir pirmais jautājums',
           'users_id'=>'1',

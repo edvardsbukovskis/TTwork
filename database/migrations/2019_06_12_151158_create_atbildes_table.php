@@ -19,7 +19,7 @@ class CreateAtbildesTable extends Migration
             $table->integer('jautajumi_id')->unsigned();
             $table->foreign('jautajumi_id')->references('jautajumi_id')->on('jautajumi');
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('users_id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -13,12 +13,12 @@ class CreateAnketaTable extends Migration
      */
     public function up()
     {
-        Schema::create('anketa', function (Blueprint $table) {
+        Schema::create('anketas', function (Blueprint $table) {
             $table->bigIncrements('anketa_id', 1)->unique();
             $table->string('description', 100);
             $table->string('nosaukums', 100);
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('users_id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
