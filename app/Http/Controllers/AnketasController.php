@@ -127,9 +127,19 @@ class AnketasController extends Controller
      */
     public function destroy($id)
     {
-        if($kartejaisid=jautajumi::find($id)){
-          
+
+        if($kartejaisid=atbildes::where($id)){
+          $kartejaisid->delete();
         }
+
+        if ($kartejaisid=jautajumi::where('anketa_id',$id)){
+          $kartejaisid->delete();
+        }
+        if ($kartejaisid=anketa::find($id)){
+          $kartejaisid->delete();
+        }
+
+        return redirect()->action('AnketasController@index');
 
     }
 }

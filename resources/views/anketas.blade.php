@@ -33,7 +33,8 @@ html, body {
 @foreach ($anketas as $anketa)
 <div style="margin: 10px; border: 2px solid black;">
 
-<a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a> <br>
+<a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
+<a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br>
 <a>{{ $anketa->id }}. anketa </a>
 <input style ="margin: 10px;" type="button" value="Papildināt" >
 <br>
