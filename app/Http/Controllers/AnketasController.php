@@ -59,7 +59,7 @@ class AnketasController extends Controller
         $atbilde->users_id=$user;
         $atbilde->jautajumi_id=$id;
         $atbilde->save();
-        return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]);
+        return redirect()->action('AnketasController@index');
 
     }
 

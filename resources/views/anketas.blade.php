@@ -38,6 +38,7 @@ html, body {
 
 
 <a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
+<a href="/anketa/update/{{$anketa->id}}">Pamainīt Anketas info</a>
 <a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br> <br>
 <a>{{ $anketa->id }}. anketa </a>
 <br>
