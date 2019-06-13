@@ -27,18 +27,41 @@ class DatabaseSeeder extends Seeder
           'password'=>bcrypt('Parole123'),
         ]);
         DB::table('anketas')->insert([
-          'description'=>'Jautājums par dzīvi',
-          'nosaukums'=>'Šis ir pirmais jautājums',
+          'description'=>'Vecāku apmierinātība par pašreizējo izglītību Rīgas 54. vidusskolā.',
+          'nosaukums'=>'Aptauja vecākiem',
           'users_id'=>'1',
+          'created_at'=>'2019-06-06 00:00:00',
+          'updated_at'=>'2019-06-06 00:00:00',
+        ]);
+        DB::table('anketas')->insert([
+          'description'=>'Jauniešu apmierinātība par pašreizējo izglītību Rīgas 54. vidusskolā.',
+          'nosaukums'=>'Aptauja jauniešiem',
+          'users_id'=>'2',
           'created_at'=>'2019-06-06 00:00:00',
           'updated_at'=>'2019-06-06 00:00:00',
         ]);
         DB::table('jautajumi')->insert([
           'anketa_id'=>'1',
-          'jautajums'=>'Kurā kursā mēs mācāmies (atbildēt ar vārdu)',
+          'jautajums'=>'Kā jūs raksturotu mūsu mācību iestādi?',
+        ]);
+        DB::table('jautajumi')->insert([
+          'anketa_id'=>'1',
+          'jautajums'=>'Vai jūsu bērns ir sūdzējies par skolu? Ja jā, tad par ko?',
+        ]);
+        DB::table('jautajumi')->insert([
+          'anketa_id'=>'1',
+          'jautajums'=>'Kādi būtu jūsu ieteikumi mūsu skolai?',
+        ]);
+        DB::table('jautajumi')->insert([
+          'anketa_id'=>'2',
+          'jautajums'=>'Vai jums patīk mūsu skola?',
+        ]);
+        DB::table('jautajumi')->insert([
+          'anketa_id'=>'2',
+          'jautajums'=>'Kādi būtu jūsu ieteikumi mūsu skolai?',
         ]);
         DB::table('atbildes')->insert([
-          'atbilde'=>'Pirmajā',
+          'atbilde'=>'Slikti. (Atbildes piemērs)',
           'jautajumi_id'=>'1',
           'users_id'=>'2',
         ]);
