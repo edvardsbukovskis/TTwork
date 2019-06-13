@@ -37,14 +37,11 @@ html, body {
 <div style="margin: 10px; border: 2px solid black;">
 
 
-<<<<<<< HEAD
-<a style="padding-left:10px;"href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
-<a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br>
-=======
+
 <a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
 <a href="/anketa/update/{{$anketa->id}}">Pamainīt Anketas info</a>
 <a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br> <br>
->>>>>>> 2548b6988b2c8cde76bf740da6695f96f940b1f0
+
 <a>{{ $anketa->id }}. anketa </a>
 <br>
 <a style ="margin-left: 30px;"><b>Anketas nosaukums: </b>{{ $anketa->nosaukums}}</a>
