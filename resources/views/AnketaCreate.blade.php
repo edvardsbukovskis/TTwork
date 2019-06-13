@@ -3,7 +3,10 @@
                     <a href="{{ url('/anketa') }}">Anketas</a>
                 </div>
 {{Form::open(array('action' => 'AnketasController@store'))}}
+    <h1>APRAKSTS:</h1>
     {{Form::text('description')}}
-        {{Form::text('nosaukums')}}
-        {{Form::submit('Submit')}}
-            {{Form::close()}}
+    <h1>NOSAUKUMS:</h1>
+    {{Form::text('nosaukums')}}
+    <br></br>
+    {{Form::submit('Submit')}}
+    {{Form::close()}}
