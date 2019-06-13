@@ -26,3 +26,5 @@ Route::post('/anketa/atbildet/{id}', 'AnketasController@aizpildit');
 Route::get('/anketa/createjaut/{id}', 'AnketasController@createJautajums');
 Route::post('/anketa/createjaut/{id}', 'AnketasController@submitJautajums');
 Route::get('/anketa/del/{id}','AnketasController@destroy');
+Route::get('/anketa/update/{id}','AnketasController@edit');
+Route::post('/anketa/update/{id}','AnketasController@update');
