@@ -59,7 +59,7 @@ class AnketasController extends Controller
         $atbilde->users_id=$user;
         $atbilde->jautajumi_id=$id;
         $atbilde->save();
-        return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]); 
+        return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]);
 
     }
 
@@ -68,6 +68,21 @@ class AnketasController extends Controller
         $jautajumi = jautajumi::where('id',$id)->get();
         return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]);
 
+    }
+
+
+    public function createJautajums($id){
+        $anketid=anketa::find($id);
+        return view('AnketasJautajumi', ['anketa'=>$anketid]);
+    }
+
+    public function submitJautajums(Request $request, $id){
+      $anketid=anketa::find($id);
+      $jautajums=new jautajumi;
+      $jautajums->jautajums=$request['jautajums'];
+      $jautajums->anketa_id=$id;
+      $jautajums->save();
+      return view('AnketasJautajumi', ['anketa'=>$anketid]);
     }
 
     /**
