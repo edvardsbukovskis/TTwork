@@ -47,7 +47,7 @@ class AnketasController extends Controller
         $anketa->nosaukums=$request['nosaukums'];
         $anketa->users_id=$user;
         $anketa->save();
-        return view ('AnketaCreate');
+        return redirect()->action('AnketasController@index');
     }
 
     public function aizpildit(Request $request, $id)
@@ -104,7 +104,8 @@ class AnketasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anketid=anketa::find($id);
+        return view ('AnketaEdit',['anketa'=>$anketid]);
     }
 
     /**
@@ -116,7 +117,13 @@ class AnketasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $anketa=anketa::find($id);
+          $user=Auth::id();
+          $anketa->description=$request['description'];
+          $anketa->nosaukums=$request['nosaukums'];
+          $anketa->users_id=$user;
+          $anketa->save();
+          return redirect()->action('AnketasController@index');
     }
 
     /**
@@ -127,10 +134,6 @@ class AnketasController extends Controller
      */
     public function destroy($id)
     {
-
-        if($kartejaisid=atbildes::where($id)){
-          $kartejaisid->delete();
-        }
 
         if ($kartejaisid=jautajumi::where('anketa_id',$id)){
           $kartejaisid->delete();
