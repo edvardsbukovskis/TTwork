@@ -127,6 +127,9 @@ class AnketasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if($kartejaisid=jautajumi::find($id)){
+          
+        }
+
     }
 }

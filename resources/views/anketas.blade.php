@@ -36,7 +36,6 @@ html, body {
 <a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a> <br>
 <a>{{ $anketa->id }}. anketa </a>
 <input style ="margin: 10px;" type="button" value="Papildināt" >
-<input style ="margin: 10px;" type="button" value="Dzēst" >
 <br>
 <a style ="margin-left: 30px;"><b>Anketas nosaukums: </b>{{ $anketa->nosaukums}}</a>
 

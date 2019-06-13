@@ -25,3 +25,4 @@ Route::get('/anketa/jautajums/{id}','AnketasController@showJautajumi');
 Route::post('/anketa/atbildet/{id}', 'AnketasController@aizpildit');
 Route::get('/anketa/createjaut/{id}', 'AnketasController@createJautajums');
 Route::post('/anketa/createjaut/{id}', 'AnketasController@submitJautajums');
+Route::get('/anketa/del/{id}','AnketasController@destroy');
