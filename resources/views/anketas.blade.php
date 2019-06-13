@@ -45,8 +45,14 @@ html, body {
 @foreach ($anketa->jautajumi as $jautajums)
 <div style="margin: 10px; background-color: grey; border: 1px solid black;">
 	<a href="/anketa/jautajums/{{$jautajums->id}}">Atbildēt</a> <br>
+<p><b>Jautājums:</b></p>
 {{$jautajums->jautajums}}
-
+<p><b>Atbildes:</b></p>
+@foreach ($jautajums->atbildes as $atbilde)
+<div style="margin: 10px; background-color: grey; border: 1px solid black;">
+{{$atbilde->atbilde}}
+</div>
+@endforeach
 </div>
 @endforeach
 </div>
