@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Anketa;
+use App\jautajumi;
+use App\Atbildes;
 use Auth;
 
 class AnketasController extends Controller
@@ -46,6 +48,26 @@ class AnketasController extends Controller
         $anketa->users_id=$user;
         $anketa->save();
         return view ('AnketaCreate');
+    }
+
+    public function aizpildit(Request $request, $id)
+    {
+        $jautajumi = jautajumi::where('id',$id)->get();
+        $user=Auth::id();
+        $atbilde=new Atbildes;
+        $atbilde->atbilde=$request['atbilde'];
+        $atbilde->users_id=$user;
+        $atbilde->jautajumi_id=$id;
+        $atbilde->save();
+        return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]); 
+
+    }
+
+    public function showJautajumi($id)
+    {
+        $jautajumi = jautajumi::where('id',$id)->get();
+        return view ('AnketasAtbildes', ['jautajumi'=>$jautajumi]);
+
     }
 
     /**

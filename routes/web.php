@@ -18,8 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('anketa','AnketasController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/anketa', 'AnketasController@index');
+Route::get('/anketa/create','AnketasController@create');
+Route::post('/anketa/create','AnketasController@store');
+Route::get('/anketa/jautajums/{id}','AnketasController@showJautajumi');
+Route::post('/anketa/atbildet/{id}', 'AnketasController@aizpildit');

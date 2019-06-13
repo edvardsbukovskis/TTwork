@@ -12,6 +12,6 @@ class atbildes extends Model
       return $this->belongsTo('App\jautajumi');
     }
     public function user(){
-      return $this->belongsTo('App\user')
+      return $this->belongsTo('App\user');
     }
 }
