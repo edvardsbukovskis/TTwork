@@ -38,8 +38,15 @@ html, body {
 
 
 
+<<<<<<< HEAD
 <a style="padding-left:10px;"href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
 <a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br>
+=======
+<a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a>
+<a href="/anketa/update/{{$anketa->id}}">Pamainīt Anketas info</a>
+<a href="/anketa/del/{{$anketa->id}}">Dzēst anketu</a> <br> <br>
+
+>>>>>>> b9d7517db81a1af38f2ea54d481393a0582cde8c
 <a>{{ $anketa->id }}. anketa </a>
 <br>
 <a style ="margin-left: 30px;"><b>Anketas nosaukums: </b>{{ $anketa->nosaukums}}</a>
