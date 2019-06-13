@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="{{ url('/anketa') }}">Anketas</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ url('/anketa/create') }}">Izveidot anketu</a>
                 </div>
             </div>
         </div>
