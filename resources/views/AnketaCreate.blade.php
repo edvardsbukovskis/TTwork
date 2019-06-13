@@ -26,6 +26,8 @@ html, body {
 					<a href="{{ url('/') }}">Sākums</a>
                     <a href="{{ url('/anketa') }}">Anketas</a>
                 </div>
+<div style="margin: 10px; background-color: darkgray; border: 1px solid black;">
+<div style="margin: 10px">
 {{Form::open(array('action' => 'AnketasController@store'))}}
     <h5>NOSAUKUMS:</h5>
     {{Form::text('nosaukums')}}
@@ -34,3 +36,5 @@ html, body {
     <br></br>
     {{Form::submit('Submit')}}
     {{Form::close()}}
+
+</div></div>

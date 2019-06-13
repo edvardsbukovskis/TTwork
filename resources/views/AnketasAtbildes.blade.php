@@ -26,14 +26,17 @@ html, body {
 					<a href="{{ url('/') }}">Sākums</a>
                     <a href="{{ url('/anketa') }}">Anketas</a>
                 </div>
-
+<div style="margin: 10px; background-color: darkgray; border: 1px solid black;">
+<div style="margin: 10px">
 @foreach ($jautajumi as $jautajums)
 {{$jautajums->jautajums}}
 @endforeach
 
 {{Form::open(array('action' => ['AnketasController@aizpildit', $jautajums->id]))}}
-<h1>ATBILDE:</h1>
+<h4>ATBILDE:</h4>
 {{Form::text('atbilde')}}
 <br></br>
 {{Form::submit('Submit')}}
 {{Form::close()}}
+</div>
+</div>

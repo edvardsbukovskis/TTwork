@@ -18,6 +18,9 @@ html, body {
     text-transform: uppercase;
     text-align: center;
 }
+.div{
+
+}
 .links{
   margin:10px;
 }
@@ -33,7 +36,7 @@ html, body {
 @foreach ($anketas as $anketa)
 <div style="margin: 10px; border: 2px solid black;">
 
-<a href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a> <br>
+<a style="padding-left:10px;" href="/anketa/createjaut/{{$anketa->id}}">Izveidot jautājumu</a> <br>
 <a>{{ $anketa->id }}. anketa </a>
 <input style ="margin: 10px;" type="button" value="Papildināt" >
 <br>
@@ -44,12 +47,12 @@ html, body {
 
 @foreach ($anketa->jautajumi as $jautajums)
 <div style="margin: 10px; background-color: grey; border: 1px solid black;">
-	<a href="/anketa/jautajums/{{$jautajums->id}}">Atbildēt</a> <br>
+	<a style="padding-left:10px;" href="/anketa/jautajums/{{$jautajums->id}}">Atbildēt</a> <br>
 <p><b>Jautājums:</b></p>
 {{$jautajums->jautajums}}
 <p><b>Atbildes:</b></p>
 @foreach ($jautajums->atbildes as $atbilde)
-<div style="margin: 10px; background-color: grey; border: 1px solid black;">
+<div style="margin: 10px; background-color: darkgray; border: 1px solid black;">
 {{$atbilde->atbilde}}
 </div>
 @endforeach
