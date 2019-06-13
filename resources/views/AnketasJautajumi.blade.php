@@ -3,8 +3,10 @@
                     <a href="{{ url('/anketa') }}">Anketas</a>
                 </div>
 
+								<div style="margin: 10px; background-color: darkgray; border: 1px solid black;">
+								<div style="margin: 10px">
 
-{{$anketa->description}}
+<p><b>Anketas aparaksts: </b>{{$anketa->description}}</p>
 
 {{Form::open(array('action' => ['AnketasController@createJautajums', $anketa->id]))}}
 <h1>Ievadīt jautājumu:</h1>
@@ -12,3 +14,5 @@
 <br></br>
 {{Form::submit('Submit')}}
 {{Form::close()}}
+</div>
+</div>
