@@ -7,12 +7,15 @@
 @foreach ($anketas as $anketa)
 <div style="margin: 10px; border: 2px solid black;">
 
-<a>{{ $anketa->id }}. anketa</a>
+<a>{{ $anketa->id }}. anketa </a> 
+<input style ="margin: 10px;" type="button" value="Aizpildīt" > 
+<input style ="margin: 10px;" type="button" value="Papildināt" > 
+<input style ="margin: 10px;" type="button" value="Dzēst" > 
 <br>
-<a style ="margin-left: 30px;">{{ $anketa->nosaukums}}</a>
+<a style ="margin-left: 30px;"><b>Anketas nosaukums: </b>{{ $anketa->nosaukums}}</a>
 
 <br>
-<a style ="margin-left: 30px;">{{ $anketa->description}}</a>
+<a style ="margin-left: 30px;"><b>Anketas apraksts: </b>{{ $anketa->description}}</a>
 
 @foreach ($anketa->jautajumi as $jautajums)
 <div style="margin: 10px; background-color: grey; border: 1px solid black;">
@@ -23,4 +26,5 @@
 </div>
 @endforeach
 </div>
+
 
