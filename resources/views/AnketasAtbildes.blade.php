@@ -32,6 +32,7 @@ html, body {
 {{$jautajums->jautajums}}
 @endforeach
 
+
 {{Form::open(array('action' => ['AnketasController@aizpildit', $jautajums->id]))}}
 <h4>ATBILDE:</h4>
 {{Form::text('atbilde')}}
